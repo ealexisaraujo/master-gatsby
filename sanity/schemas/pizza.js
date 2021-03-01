@@ -53,7 +53,7 @@ export default {
       topping2: 'toppings.2.name',
       topping3: 'toppings.3.name',
     },
-    prepae: ({ title, media, ...toppings }) => {
+    prepare: ({ title, media, ...toppings }) => {
       // 1.- Filter undefined toppings out
       const tops = Object.values(toppings).filter(Boolean);
       console.log('Stay');
