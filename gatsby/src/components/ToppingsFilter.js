@@ -61,7 +61,12 @@ export default function ToppingsFilter() {
   // Link it up.. ...  . . .
   return (
     <div>
-      <p>Toppings!</p>
+      {toppingsWithCounts.map((topping) => (
+        <Link to={`/topping/${topping.name}`} key={topping.id}>
+          <span className='name'>{topping.name}</span>
+          <span className='count'>{topping.count}</span>
+        </Link>
+      ))}
     </div>
   );
 }
