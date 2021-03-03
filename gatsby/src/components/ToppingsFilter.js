@@ -5,6 +5,25 @@ import styled from 'styled-components';
 export default function ToppingsFilter() {
   // Get a list of all the toppings
   // Get a list of all the Pizzas with their toppings
+  const { toppings, pizzas } = useStaticQuery(graphql`
+    query {
+      toppings: allSanityTopping {
+        nodes {
+          name
+          id
+          vegetarian
+        }
+      }
+      pizzas: allSanityPizza {
+        nodes {
+          toppings {
+            name
+            id
+          }
+        }
+      }
+    }
+  `);
   // Count how many pizzas are in each topping
   // Loop over the list of toppings and display the topping and the count of pizzas in that topping
   // Link it up.. ...  . . .
